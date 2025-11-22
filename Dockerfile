@@ -15,7 +15,7 @@ COPY requirements.txt /requirements.txt
 RUN uv pip install -r /requirements.txt --system
 
 # Install torch CUDA 12.1
-RUN pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+RUN pip install torch==2.6.0 torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
 
 ADD src .
 COPY test_input.json /test_input.json
